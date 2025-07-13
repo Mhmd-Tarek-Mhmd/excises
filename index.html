@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2a9d8f" />
+    <title>خطة تمرين منزلية</title>
+    <meta
+      name="description"
+      content="خطة تمرين منزلية بسيطة وفعالة بدون معدات"
+    />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="manifest.json" />
+    <style>
+      :root {
+        --text: #222;
+        --bg: #f9f9f9;
+        --section-bg: #fff;
+        --heading: #2a9d8f;
+      }
+      :root .dark {
+        --text: #eee;
+        --bg: #181818;
+        --heading: #2dc7a3;
+        --section-bg: #232323;
+      }
+      body {
+        margin: 0;
+        padding: 1rem;
+        color: var(--text);
+        font-family: sans-serif;
+        background-color: var(--bg);
+      }
+      h1,
+      h2 {
+        margin: 0;
+        color: var(--heading);
+      }
+      h2 {
+        display: inline-block;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        justify-content: space-between;
+      }
+      section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 10px;
+        background: var(--section-bg);
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        ::marker {
+          color: #2a9d8f;
+        }
+        summary {
+          cursor: pointer;
+        }
+      }
+      ul {
+        padding-right: 1rem;
+        --grid: 100px 1fr;
+        li:first-of-type {
+          display: grid;
+          font-weight: bold;
+          margin-bottom: 0.5rem;
+          grid-template-columns: var(--grid);
+        }
+        li {
+          display: grid;
+          font-size: 14px;
+          margin-bottom: 0.25rem;
+          justify-items: flex-start;
+          grid-template-columns: var(--grid);
+        }
+      }
+
+      .btn {
+        border: none;
+        color: inherit;
+        font-size: 1.15em;
+        background: initial;
+        font-family: inherit;
+      }
+      .btn:hover:not(:disabled) {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      .video-frame {
+        width: 100%;
+        border: none;
+        margin: 1em 0;
+        height: 315px;
+        display: block;
+        max-width: 560px;
+        border-radius: 10px;
+        grid-column: 1 / -1;
+      }
+      #theme-toggle {
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        border: none;
+        cursor: pointer;
+        font-size: 1.5em;
+        background: none;
+        border-radius: 50%;
+        transition: background-color 0.2s;
+      }
+      #theme-toggle:hover {
+        background-color: var(--heading);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>🏋️ خطة تمرين منزلية</h1>
+        <button id="theme-toggle" aria-label="تبديل الوضع">🌙</button>
+      </header>
+
+      <section>
+        <details name="day">
+          <summary>
+            <h2>الخطة اليومية</h2>
+          </summary>
+          <ul>
+            <li>
+              اليوم
+              <span>التمارين</span>
+            </li>
+            <li>
+              الإثنين
+              <button class="btn" onclick="openDay(1)">
+                تمارين الظهر + أكتاف خلفية + Core
+              </button>
+            </li>
+            <li>
+              الثلاثاء
+              <button class="btn" disabled>راحة أو Stretch</button>
+            </li>
+            <li>
+              الأربعاء
+              <button class="btn" onclick="openDay(2)">
+                تمارين الرجل + مرونة
+              </button>
+            </li>
+            <li>
+              الخميس
+              <button class="btn" disabled>راحة</button>
+            </li>
+            <li>
+              الجمعة
+              <button class="btn" onclick="openDay(3)">
+                تمارين الصدر + كتف + Core
+              </button>
+            </li>
+            <li>
+              السبت
+              <button class="btn" onclick="openDay(4)">
+                اختياري: مرونة + كارديو خفيف
+              </button>
+            </li>
+            <li>
+              الأحد
+              <button class="btn" disabled>راحة</button>
+            </li>
+          </ul>
+        </details>
+      </section>
+
+      <section>
+        <details name="day" data-day="1">
+          <summary>
+            <h2>تمارين الظهر + أكتاف خلفية + Core</h2>
+          </summary>
+          <ul>
+            <li>
+              التكرارات
+              <span>اسم التمرين</span>
+            </li>
+            <li>
+              15
+              <button class="btn" data-video="0qLP2RNKX4A">
+                Reverse Snow Angels
+              </button>
+            </li>
+            <li>
+              30s
+              <button class="btn" data-video="z6PJMT2y8GQ">
+                Superman Hold
+              </button>
+            </li>
+            <li>
+              10
+              <button class="btn" data-video="QdGTI4Lshg4">Y-T-W Raises</button>
+            </li>
+            <li>
+              10
+              <button class="btn" data-video="cvx06snMQ3A">Wall Angels</button>
+            </li>
+            <li>
+              30s
+              <button class="btn" data-video="pSHjTRCQxIw">Plank</button>
+            </li>
+            <li>
+              <span dir="ltr">10 each leg</span>
+              <button class="btn" data-video="DdUKPepLsTw">Dead Bug</button>
+            </li>
+          </ul>
+        </details>
+      </section>
+
+      <section>
+        <details name="day" data-day="2">
+          <summary>
+            <h2>تمارين الرجل + مرونة</h2>
+          </summary>
+          <ul>
+            <li>
+              التكرارات
+              <span>اسم التمرين</span>
+            </li>
+            <li>
+              15
+              <button class="btn" data-video="aclHkVaku9U">
+                Bodyweight Squat
+              </button>
+            </li>
+            <li>
+              12
+              <button class="btn" data-video="QOVaHwm-Q6U">Static Lunge</button>
+            </li>
+            <li>
+              15
+              <button class="btn" data-video="m2Zx-57cSok">Glute Bridge</button>
+            </li>
+            <li>
+              20
+              <button class="btn" data-video="YMmgqO8Jo-k">Calf Raises</button>
+            </li>
+            <li>
+              <span dir="ltr">30s each leg</span>
+              <button class="btn" data-video="JB2oyawG9KI">
+                Hip Flexor Stretch
+              </button>
+            </li>
+            <li>
+              <span dir="ltr">30s each leg</span>
+              <button class="btn" data-video="TWaWhXgLMRI">
+                Hamstring Stretch
+              </button>
+            </li>
+          </ul>
+        </details>
+      </section>
+
+      <section>
+        <details name="day" data-day="3">
+          <summary>
+            <h2>تمارين الصدر + كتف + Core</h2>
+          </summary>
+          <ul>
+            <li>
+              التكرارات
+              <span>اسم التمرين</span>
+            </li>
+            <li>
+              10
+              <button class="btn" data-video="8QgSAFdZQjk">
+                Incline Push-up
+              </button>
+            </li>
+            <li>
+              10
+              <button class="btn" data-video="IODxDxX7oi4">Push-up</button>
+            </li>
+            <li>
+              20
+              <button class="btn" data-video="6s2kzZ8cAjg">
+                Shoulder Taps
+              </button>
+            </li>
+            <li>
+              30s
+              <button class="btn" data-video="2pLT-olgUJs">Arm Circles</button>
+            </li>
+            <li>
+              20
+              <button class="btn" data-video="wkD8rjkodUI">
+                Russian Twist
+              </button>
+            </li>
+            <li>
+              10
+              <button class="btn" data-video="0zTn6ZqG3yE">
+                Plank to Push-up
+              </button>
+            </li>
+          </ul>
+        </details>
+      </section>
+
+      <section>
+        <details name="day" data-day="4">
+          <summary>
+            <h2>اختياري: تمارين مرونة فقط</h2>
+          </summary>
+          <ul>
+            <li>
+              التكرارات
+              <span>اسم التمرين</span>
+            </li>
+            <li>
+              2m
+              <button class="btn" data-video="LIVJZZyZ2qM">Cat-Cow</button>
+            </li>
+            <li>
+              1m
+              <button class="btn" data-video="XhBNFJ0fuuA">
+                Seated Forward Fold
+              </button>
+            </li>
+            <li>
+              1m
+              <button class="btn" data-video="kH12QrSGedM">Child’s Pose</button>
+            </li>
+            <li>
+              <span dir="ltr">1m each side</span>
+              <button class="btn" data-video="MfUx9FCOb1E">
+                Thread the Needle (للظهر العلوي)
+              </button>
+            </li>
+            <li>
+              1m
+              <button class="btn" data-video="goN4rWbQUn4">
+                Standing Forward Fold
+              </button>
+            </li>
+            <li>
+              1m to 2m
+              <button class="btn" data-video="JpaYwJLzElM">
+                Neck Rolls + Stretch
+              </button>
+            </li>
+          </ul>
+        </details>
+      </section>
+    </main>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("sw.js")
+          .then(() => console.log("✅ Service Worker Registered"))
+          .catch((err) => console.error("Service Worker Failed:", err));
+      }
+    </script>
+
+    <script>
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        document.body.classList.add("dark");
+        document.getElementById("theme-toggle").textContent = "☀️";
+      }
+    </script>
+
+    <script>
+      const openDay = (day) => {
+        const dayEl = document.querySelector(`details[data-day="${day}"]`);
+        if (dayEl) dayEl.setAttribute("open", "");
+      };
+
+      document
+        .getElementById("theme-toggle")
+        .addEventListener("click", function () {
+          document.body.classList.toggle("dark");
+          this.textContent = document.body.classList.contains("dark")
+            ? "☀️"
+            : "🌙";
+        });
+
+      // Video button logic
+      let currentFrame = null;
+      document.querySelectorAll("[data-video]").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const id = "frame-" + btn.dataset.video;
+
+          if (currentFrame?.id === id) return currentFrame.remove();
+          if (currentFrame) currentFrame.remove();
+
+          // Create new iframe
+          const iframe = document.createElement("iframe");
+          iframe.id = id;
+          iframe.className = "video-frame";
+          iframe.src = `https://www.youtube.com/embed/${btn.dataset.video}?autoplay=1`;
+          iframe.allow =
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+          iframe.allowFullscreen = true;
+
+          btn.parentNode.appendChild(iframe);
+          currentFrame = iframe;
+        });
+      });
+    </script>
+  </body>
+</html>
