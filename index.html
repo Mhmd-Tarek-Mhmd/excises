@@ -238,21 +238,21 @@
             </li>
             <li>
               15
-              <button class="btn" data-video="m2Zx-57cSok">Glute Bridge</button>
+              <button class="btn" data-video="vtnpY_fYJ4M">Glute Bridge</button>
             </li>
             <li>
               20
-              <button class="btn" data-video="YMmgqO8Jo-k">Calf Raises</button>
+              <button class="btn" data-video="nnPGrBLNlaw">Calf Raises</button>
             </li>
             <li>
               <span dir="ltr">30s each leg</span>
-              <button class="btn" data-video="JB2oyawG9KI">
+              <button class="btn" data-video="tsGPYSQbZx4">
                 Hip Flexor Stretch
               </button>
             </li>
             <li>
               <span dir="ltr">30s each leg</span>
-              <button class="btn" data-video="TWaWhXgLMRI">
+              <button class="btn" data-video="wr_8aak4Wbc">
                 Hamstring Stretch
               </button>
             </li>
@@ -272,7 +272,7 @@
             </li>
             <li>
               10
-              <button class="btn" data-video="8QgSAFdZQjk">
+              <button class="btn" data-video="yAbg3_pJKvw">
                 Incline Push-up
               </button>
             </li>
@@ -282,23 +282,23 @@
             </li>
             <li>
               20
-              <button class="btn" data-video="6s2kzZ8cAjg">
+              <button class="btn" data-video="Ki-H6D3gvco">
                 Shoulder Taps
               </button>
             </li>
             <li>
               30s
-              <button class="btn" data-video="2pLT-olgUJs">Arm Circles</button>
+              <button class="btn" data-video="UVMEnIaY8aU">Arm Circles</button>
             </li>
             <li>
               20
-              <button class="btn" data-video="wkD8rjkodUI">
+              <button class="btn" data-video="DJQGX2J4IVw">
                 Russian Twist
               </button>
             </li>
             <li>
               10
-              <button class="btn" data-video="0zTn6ZqG3yE">
+              <button class="btn" data-video="56vUOad6Irs">
                 Plank to Push-up
               </button>
             </li>
@@ -393,8 +393,8 @@
         btn.addEventListener("click", function () {
           const id = "frame-" + btn.dataset.video;
 
-          if (currentFrame?.id === id) return currentFrame.remove();
           if (currentFrame) currentFrame.remove();
+          if (currentFrame?.id === id) return (currentFrame = null);
 
           // Create new iframe
           const iframe = document.createElement("iframe");
