@@ -354,11 +354,30 @@
     </main>
 
     <script>
+      const SW_VERSION = "v0";
+
       if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("sw.js")
-          .then(() => console.log("✅ Service Worker Registered"))
-          .catch((err) => console.error("Service Worker Failed:", err));
+        navigator.serviceWorker.getRegistration().then((reg) => {
+          if (
+            reg &&
+            reg.active &&
+            reg.active.scriptURL.indexOf(SW_VERSION) === -1
+          ) {
+            reg.unregister().then(() => {
+              navigator.serviceWorker
+                .register(`sw.js?${SW_VERSION}`)
+                .then(() =>
+                  console.log("✅ Service Worker Registered (new version)")
+                )
+                .catch((err) => console.error("Service Worker Failed:", err));
+            });
+          } else {
+            navigator.serviceWorker
+              .register(`sw.js?${SW_VERSION}`)
+              .then(() => console.log("✅ Service Worker Registered"))
+              .catch((err) => console.error("Service Worker Failed:", err));
+          }
+        });
       }
     </script>
 
